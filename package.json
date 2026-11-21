@@ -1,0 +1,23 @@
+{
+  "name": "coding-cpp-android",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "node --check server.js && node --check src/main.js && node --check public/sw.js",
+    "build": "esbuild src/main.js --bundle --minify --outfile=public/app.js",
+    "prestart": "npm run build",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@codemirror/lang-cpp": "^6.0.3",
+    "@codemirror/theme-one-dark": "^6.1.2",
+    "codemirror": "^6.0.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "allowScripts": {
+    "esbuild@0.25.12": true
+  }
+}

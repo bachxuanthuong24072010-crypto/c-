@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101114"><meta name="description" content="Trình soạn thảo và chạy C++ cá nhân trên Android">
+<link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/app.css?v=4">
+<title>Coding C++</title>
+</head>
+<body>
+<header class="header">
+ <div class="file-info"><div class="file-name">📄 main.cpp</div><div class="file-status" id="fileStatus">Đang khởi động...</div></div>
+ <div class="actions"><button class="action run" id="runButton">▶ RUN</button><button class="action stop" id="stopButton">■ STOP</button><button class="menu" id="menuButton" aria-label="Mở menu">⋮</button></div>
+</header>
+<div class="toolbar"><span>EDITOR</span><span>UTF-8 · C++17</span></div>
+<main id="editor" aria-label="Trình soạn thảo C++"></main>
+<div class="shortcuts">
+ <button class="shortcut" data-insert="#include &lt;bits/stdc++.h&gt;\n">#include</button>
+ <button class="shortcut" data-insert="->">-&gt;</button><button class="shortcut" data-insert="::">::</button>
+ <button class="shortcut" data-insert="()">()</button><button class="shortcut" data-insert="{}">{}</button>
+ <button class="shortcut" data-insert="[]">[]</button><button class="shortcut" data-insert=";">;</button>
+ <button class="shortcut" data-insert="cout &lt;&lt; ">cout</button><button class="shortcut" data-insert="cin &gt;&gt; ">cin</button>
+</div>
+<section class="console-panel" id="consolePanel">
+ <div class="console-titlebar">
+  <div class="console-heading"><span class="console-dot"></span><strong>CONSOLE</strong><span class="console-run-state" id="consoleRunState">Sẵn sàng</span></div>
+  <div class="console-actions">
+   <button class="console-icon-button" id="copyConsole" title="Sao chép console" aria-label="Sao chép console">⧉</button>
+   <button class="console-icon-button" id="clearConsole" title="Xóa console" aria-label="Xóa console">⌫</button>
+   <button class="console-icon-button" id="toggleConsole" title="Thu gọn console" aria-label="Thu gọn console">⌄</button>
+  </div>
+ </div>
+ <div class="console-tabs">
+  <button class="console-tab active" data-tab="input">INPUT</button>
+  <button class="console-tab" data-tab="output">OUTPUT</button>
+ </div>
+ <div class="console-body" id="consoleBody">
+  <textarea id="inputData" placeholder="Nhập dữ liệu đầu vào..." spellcheck="false"></textarea>
+ </div>
+ <div class="console-statusbar"><span id="consoleFooter">C++17 · Console v4</span><span id="consoleExitStatus">Chưa chạy</span></div>
+</section>
+<aside class="drawer" id="fileDrawer">
+ <div class="drawer-head"><strong>QUẢN LÝ TỆP</strong><button id="closeDrawer">✕</button></div>
+ <button class="drawer-action" id="newFile">＋ Tệp mới</button>
+ <button class="drawer-action" id="saveButton">Lưu</button>
+ <button class="drawer-action" id="refreshFiles">↻ Làm mới</button>
+ <button class="drawer-action" id="deleteFile">Xóa tệp đang mở</button>
+ <div class="file-list" id="fileList"></div>
+ <p style="color:#858b99;font-size:11px;line-height:1.5;margin-top:18px">Tệp được lưu trong thư mục workspace của Coding C++ trên Termux.</p>
+</aside>
+<div class="toast" id="toast"></div>
+<script type="module" src="/app.js?v=4"></script>
+</body></html>
