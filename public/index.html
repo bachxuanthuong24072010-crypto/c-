@@ -2,16 +2,15 @@
 <!doctype html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="theme-color" content="#101114">
+    <meta name="description" content="Trình soạn thảo và chạy C++ cá nhân trên Android">
 
-<meta name="theme-color" content="#101114">
-<meta name="description" content="Trình soạn thảo và chạy C++ cá nhân trên Android">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./app.css?v=5">
 
-<link rel="manifest" href="./manifest.json">
-<link rel="stylesheet" href="./app.css?v=5">
-
-<title>Coding C++</title>
+    <title>Coding C++</title>
 </head>
 
 <body>
@@ -49,7 +48,6 @@
 </div>
 
 <section class="console-panel" id="consolePanel">
-
     <div class="console-titlebar">
         <div class="console-heading">
             <span class="console-dot"></span>
@@ -58,26 +56,9 @@
         </div>
 
         <div class="console-actions">
-            <button
-                class="console-icon-button"
-                id="copyConsole"
-                title="Sao chép console"
-                aria-label="Sao chép console"
-            >⧉</button>
-
-            <button
-                class="console-icon-button"
-                id="clearConsole"
-                title="Xóa console"
-                aria-label="Xóa console"
-            >⌫</button>
-
-            <button
-                class="console-icon-button"
-                id="toggleConsole"
-                title="Thu gọn console"
-                aria-label="Thu gọn console"
-            >⌄</button>
+            <button class="console-icon-button" id="copyConsole" title="Sao chép console" aria-label="Sao chép console">⧉</button>
+            <button class="console-icon-button" id="clearConsole" title="Xóa console" aria-label="Xóa console">⌫</button>
+            <button class="console-icon-button" id="toggleConsole" title="Thu gọn console" aria-label="Thu gọn console">⌄</button>
         </div>
     </div>
 
@@ -87,22 +68,16 @@
     </div>
 
     <div class="console-body" id="consoleBody">
-        <textarea
-            id="inputData"
-            placeholder="Nhập dữ liệu đầu vào..."
-            spellcheck="false"
-        ></textarea>
+        <textarea id="inputData" placeholder="Nhập dữ liệu đầu vào..." spellcheck="false"></textarea>
     </div>
 
     <div class="console-statusbar">
         <span id="consoleFooter">C++17 · Console v4</span>
         <span id="consoleExitStatus">Chưa chạy</span>
     </div>
-
 </section>
 
 <aside class="drawer" id="fileDrawer">
-
     <div class="drawer-head">
         <strong>QUẢN LÝ TỆP</strong>
         <button id="closeDrawer">✕</button>
@@ -118,7 +93,6 @@
     <p style="color:#858b99;font-size:11px;line-height:1.5;margin-top:18px">
         Tệp được lưu trong thư mục workspace của Coding C++ trên Termux.
     </p>
-
 </aside>
 
 <div class="toast" id="toast"></div>

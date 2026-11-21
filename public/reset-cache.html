@@ -1,10 +1,15 @@
 <!doctype html>
-<html lang="vi"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101114">
 <title>Làm mới Coding C++</title>
+</head>
 <body style="margin:0;background:#101114;color:#e7e9ef;font:16px Arial;display:grid;min-height:100vh;place-items:center">
-<div style="max-width:520px;padding:28px;text-align:center"><h2>Đang làm mới Coding C++...</h2><p id="message">Đang xóa giao diện cũ được lưu trong trình duyệt.</p></div>
+<div style="max-width:520px;padding:28px;text-align:center"><h2>Đang làm mới Coding C++...</h2><p id="message">Đang xóa giao diện và cache cũ.</p></div>
 <script>
-(async()=>{
+(async () => {
   try {
     if ("serviceWorker" in navigator) {
       const registrations = await navigator.serviceWorker.getRegistrations();
@@ -14,10 +19,12 @@
       const keys = await caches.keys();
       await Promise.all(keys.filter(key => key.startsWith("coding-cpp-shell-")).map(key => caches.delete(key)));
     }
-    document.getElementById("message").textContent = "Đã xóa cache cũ. Đang mở phiên bản mới...";
-    location.replace("/?fresh=4-" + Date.now());
+    document.getElementById("message").textContent = "Đã xóa cache. Đang mở Coding C++ phiên bản mới...";
+    location.replace("/?fresh=5-" + Date.now());
   } catch (error) {
-    document.getElementById("message").textContent = "Không thể tự xóa cache: " + error.message + ". Hãy xóa dữ liệu trang localhost trong Chrome.";
+    document.getElementById("message").textContent = "Không thể tự xóa cache: " + error.message;
   }
 })();
-</script></body></html>
+</script>
+</body>
+</html>

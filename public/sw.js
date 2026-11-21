@@ -1,9 +1,20 @@
-const CACHE = "coding-cpp-shell-v4";
-const CORE = ["/", "/index.html", "/app.css?v=4", "/app.js?v=4", "/manifest.json"];
+const CACHE = "coding-cpp-shell-v5";
+const CORE = [
+  "/",
+  "/index.html",
+  "/app.css?v=5",
+  "/app.js?v=5",
+  "/manifest.json",
+  "/icons/icon-192.png",
+  "/icons/icon-512.png",
+  "/icons/icon-512-maskable.png"
+];
+
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(CORE)));
   self.skipWaiting();
 });
+
 self.addEventListener("activate", event => {
   event.waitUntil((async () => {
     const keys = await caches.keys();
@@ -12,6 +23,7 @@ self.addEventListener("activate", event => {
     await self.clients.claim();
   })());
 });
+
 self.addEventListener("fetch", event => {
   const request = event.request;
   const url = new URL(request.url);
@@ -31,7 +43,7 @@ self.addEventListener("fetch", event => {
     const cached = await cache.match(request);
     if (cached) return cached;
     const response = await fetch(request);
-    if (response.ok && ["/app.css", "/app.js", "/manifest.json"].includes(url.pathname)) {
+    if (response.ok && ["/app.css", "/app.js", "/manifest.json", "/icons/icon-192.png", "/icons/icon-512.png", "/icons/icon-512-maskable.png"].includes(url.pathname)) {
       cache.put(request, response.clone());
     }
     return response;
